@@ -5,6 +5,7 @@ export default function Layout({ children }) {
         <div className="max-w-5xl m-auto">
             <Header />
             {children}
+
         </div>
     )
 }

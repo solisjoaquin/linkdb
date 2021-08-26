@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css'
+import '../css/styles.css'
 import React from 'react';
 import { UserProvider } from '@auth0/nextjs-auth0';
 

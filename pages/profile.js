@@ -1,6 +1,7 @@
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Head from 'next/head'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
+import ProfileCard from "../components/ProfileCard";
 
 export default function Profile() {
     const { user } = useUser();
@@ -11,14 +12,16 @@ export default function Profile() {
                 <title>Profile</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
+            <Layout >
+                {user && (
+                    <div>
+                        <ProfileCard user={user} />
+                    </div>
+                )}
 
-            {user && (
-                <div>
-                    <p className="text-lg">Name: {user.name} </p>
-                    <p className="text-lg">Email: {user.email} </p>
-                </div>
-            )}
+            </Layout>
+
+
         </div>
     );
 }
